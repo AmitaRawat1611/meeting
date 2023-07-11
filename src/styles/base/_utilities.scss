@@ -1,0 +1,66 @@
+// .btn--black {
+//   background-color: $black;
+//   padding: 1rem 3.4rem;
+//   border-radius: 100px;
+//   color: $white;
+//   font-size: 0.7rem;
+//   text-transform: uppercase;
+//   font-weight: 600;
+// }
+@import "../abstracts/variables";
+.cards {
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+  margin: 0 auto;
+}
+.secondary-blue {
+  color: $secondary-main;
+}
+.secondary-light {
+  background-color: $secondary-light;
+}
+.primary-main {
+  color: $primary-main;
+}
+.pink-main {
+  color: $pink-main;
+}
+.primary-light {
+  background-color: $primary-light;
+}
+.tertiary-main {
+  color: $tertiary-main;
+}
+.tertiary-light {
+  background-color: $tertiary-light;
+}
+
+.border-left-primary {
+  border-left: 7px solid $primary-main;
+}
+.border-left-tertiary {
+  border-left: 7px solid $tertiary-main;
+}
+.border-left-secondary {
+  border-left: 7px solid $secondary-main;
+}
+.border-left-pink {
+  border-left: 7px solid $pink-main;
+}
+
+//margin
+.margin-b--m {
+  margin-bottom: 2rem;
+}
+.margin-b-sm {
+  margin-bottom: 1rem;
+}
+.center {
+  align-self: center;
+}
+
+.flex-direction-column {
+  display: flex;
+  flex-direction: column;
+}

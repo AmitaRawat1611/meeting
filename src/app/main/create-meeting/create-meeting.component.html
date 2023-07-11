@@ -1,0 +1,141 @@
+<form class="create-user--form" [formGroup]="form">
+  <h1 class="create-user--form__heading">
+    {{ update === true ? "Update" : "Create" }} Meeting
+  </h1>
+  <div class="container">
+    <mat-form-field class="create-user--form__input">
+      <mat-label>Title</mat-label>
+      <input matInput formControlName="title" />
+      <mat-error *ngIf="form.get('title')?.errors?.['required']">
+        Enter Meeting Title
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Description -->
+    <mat-form-field class="create-user--form__input">
+      <mat-label>Description</mat-label>
+      <input matInput formControlName="description" />
+      <mat-error *ngIf="form.get('description')?.errors?.['required']">
+        Enter description
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Members -->
+    <mat-form-field class="create-user--form__input">
+      <mat-label>Select Member</mat-label>
+      <mat-select
+        multiple
+        formControlName="membersUsername"
+        [value]="form.get('members')?.value"
+      >
+        <mat-option *ngFor="let member of membersUsername" [value]="member">{{
+          member
+        }}</mat-option>
+      </mat-select>
+      <mat-error *ngIf="form.get('membersUsername')?.errors?.['required']">
+        Select atleast 1 member
+      </mat-error>
+    </mat-form-field>
+
+    <!-- days -->
+
+    <mat-form-field class="create-user--form__input">
+      <mat-label>Consecutive days</mat-label>
+      <input matInput formControlName="consecutive" />
+      <mat-error *ngIf="form.get('consecutive')?.errors?.['required']">
+        Enter no. of consecutive days for meeting
+      </mat-error>
+      <mat-error *ngIf="form.get('consecutive')?.errors?.['pattern']">
+        Enter a number
+      </mat-error>
+    </mat-form-field>
+
+    <!-- time -->
+    <!-- <mat-form-field class="create-user--form__input">
+      <mat-label>Time</mat-label>
+      <input matInput formControlName="time" />
+      <mat-error *ngIf="form.get('time')?.errors?.['required']">
+        Enter time
+      </mat-error>
+    </mat-form-field> -->
+
+    <!-- <mat-form-field>
+      <input matInput type="datetime-local" placeholder="start date" />
+    </mat-form-field> -->
+
+    <!-- date -->
+    <mat-form-field class="create-user--form__input">
+      <mat-label>Start</mat-label>
+      <input matInput formControlName="start" />
+    </mat-form-field>
+
+    <mat-form-field class="create-user--form__input">
+      <mat-label>End</mat-label>
+      <input matInput formControlName="end" />
+    </mat-form-field>
+
+    <!-- <mat-form-field>
+      <input matInput [matDatepicker]="picker" formControlName="date" />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <input
+        matInput
+        [ngxTimepicker]="timepicker"
+        placeholder="Select time"
+        formControlName="time"
+      />
+      <mat-datepicker #picker></mat-datepicker>
+      <ngx-material-timepicker #timepicker></ngx-material-timepicker>
+    </mat-form-field> -->
+
+    <!-- <mat-form-field>
+      <input
+        matInput
+        [ngxMatDatetimePicker]="picker"
+        placeholder="Choose a date & time"
+        [(ngModel)]="myDatePicker"
+        formControlName="date"
+      />
+
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+
+      <ngx-mat-datetime-picker #picker></ngx-mat-datetime-picker>
+    </mat-form-field> -->
+
+    <!-- 
+    <mat-form-field>
+      <input
+        matInput
+        [matDatetimepicker]="picker"
+        placeholder="Select date and time"
+        [formControl]="dateTimeControl"
+      />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datetimepicker-toggle
+        matSuffix
+        [for]="picker"
+      ></mat-datetimepicker-toggle>
+      <mat-datetimepicker #picker></mat-datetimepicker>
+    </mat-form-field> -->
+  </div>
+  <div class="create-user--form__btn-box">
+    <button
+      class="create-user--form__btn"
+      mat-raised-button
+      color="primary"
+      mat-dialog-close
+      (click)="onSubmit()"
+      [disabled]="form.invalid && show"
+    >
+      Save
+    </button>
+
+    <button
+      class="create-user--form__btn"
+      mat-raised-button
+      color="warn"
+      (click)="close()"
+    >
+      Close
+    </button>
+  </div>
+</form>

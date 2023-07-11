@@ -1,0 +1,59 @@
+<form class="create-user--form" [formGroup]="form">
+  <h1 class="create-user--form__heading">Update Details</h1>
+
+  <mat-form-field class="create-user--form__input">
+    <mat-label>Name</mat-label>
+    <input matInput formControlName="name" />
+  </mat-form-field>
+  <!-- <mat-error *ngIf="name && name.invalid && name.touched">
+        Enter name
+      </mat-error> -->
+
+  <!-- Age -->
+  <mat-form-field class="create-user--form__input">
+    <mat-label>Age</mat-label>
+    <input matInput formControlName="age" />
+  </mat-form-field>
+
+  <!-- <mat-error *ngIf="age && age.invalid && age.touched"> Enter age </mat-error> -->
+
+  <!-- Gender -->
+  <div class="gender__box">
+    <mat-label>Gender:</mat-label>
+    <mat-radio-group aria-label="Select an option" formControlName="gender">
+      <mat-radio-button color="primary" value="female">Female</mat-radio-button>
+      <mat-radio-button color="primary" value="male">Male</mat-radio-button>
+      <mat-radio-button color="primary" value="Others">Others</mat-radio-button>
+    </mat-radio-group>
+  </div>
+
+  <!-- email -->
+  <mat-form-field class="create-user--form__input">
+    <mat-label>Email</mat-label>
+    <input matInput formControlName="email" />
+  </mat-form-field>
+  <!-- <mat-error *ngIf="email && email.invalid && email.touched">
+      Enter email
+    </mat-error> -->
+
+  <div class="create-user--form__btn-box">
+    <button
+      class="create-user--form__btn"
+      mat-raised-button
+      color="primary"
+      mat-dialog-close
+      (click)="onSubmit()"
+    >
+      Save
+    </button>
+
+    <button
+      class="create-user--form__btn"
+      mat-raised-button
+      color="warn"
+      mat-dialog-close
+    >
+      Close
+    </button>
+  </div>
+</form>

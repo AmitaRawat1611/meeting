@@ -1,0 +1,67 @@
+@import "../../../styles/abstracts/variables";
+@import "../../../styles/base/utilities";
+
+.create-user--form {
+  display: flex;
+  // flex-direction: column;
+  flex-wrap: wrap;
+  padding: 2rem;
+  border-left: 10px solid $primary-dark;
+
+  &__btn {
+    padding: 1.6rem;
+    margin-right: 1rem;
+
+    &-box {
+      display: flex;
+      align-self: flex-end;
+    }
+  }
+  &__heading {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    letter-spacing: 1.3px;
+  }
+
+  &__input {
+    width: 47%;
+  }
+}
+input {
+  width: 100%;
+}
+.mat-mdc-dialog-container .mdc-dialog__surface {
+  border-radius: var(
+    --mdc-dialog-container-shape,
+    var(--mdc-shape-medium, 22px)
+  );
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.gender__box {
+  display: flex;
+
+  align-items: center;
+  // margin-bottom: 1rem;
+  // padding: 1rem;
+}
+.input {
+  &__password {
+    width: 25rem;
+    display: flex;
+    margin: 0 auto;
+
+    &--error {
+      text-align: left;
+      width: 25rem;
+      margin: 0 auto;
+      margin-bottom: 1rem;
+    }
+  }
+}

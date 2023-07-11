@@ -1,0 +1,115 @@
+<form class="create-user--form" [formGroup]="form">
+  <h1 class="create-user--form__heading">
+    {{ update === true ? "Update" : "Create" }} User Form
+  </h1>
+  <div class="container">
+    <mat-form-field class="create-user--form__input">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" />
+      <mat-error *ngIf="name && name.invalid && name.touched">
+        Enter name
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Age -->
+    <mat-form-field class="create-user--form__input">
+      <mat-label>Age</mat-label>
+      <input matInput formControlName="age" />
+      <mat-error *ngIf="age && age.invalid && age.touched">
+        Enter age
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Gender -->
+
+    <mat-label class="center">Gender:</mat-label>
+    <mat-radio-group
+      aria-label="Select an option"
+      formControlName="gender"
+      class="center"
+    >
+      <mat-radio-button color="primary" value="female">Female</mat-radio-button>
+      <mat-radio-button color="primary" value="male">Male</mat-radio-button>
+      <mat-radio-button color="primary" value="Others">Others</mat-radio-button>
+    </mat-radio-group>
+
+    <mat-form-field class="create-user--form__input">
+      <mat-label>Select</mat-label>
+      <mat-select formControlName="role">
+        <mat-option value="ROLE_ADMIN">Admin</mat-option>
+        <mat-option value="ROLE_USER">User</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div class="gender__box"></div>
+
+    <!-- email -->
+
+    <mat-form-field class="create-user--form__input">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" />
+      <mat-error *ngIf="email && email.invalid && email.touched">
+        Enter email
+      </mat-error>
+    </mat-form-field>
+
+    <!-- username -->
+    <mat-form-field class="create-user--form__input">
+      <mat-label>Username</mat-label>
+      <input matInput formControlName="username" />
+      <mat-error *ngIf="username && username.invalid && username.touched">
+        Enter username
+      </mat-error>
+    </mat-form-field>
+
+    <!-- password -->
+
+    <mat-form-field class="input__password" *ngIf="show">
+      <mat-label>Password</mat-label>
+      <input matInput formControlName="password" />
+
+      <mat-error *ngIf="password && password.invalid && password.touched">
+        Enter a valid password
+      </mat-error>
+    </mat-form-field>
+    <div
+      *ngIf="
+        form.get('password')?.errors &&
+        (form.get('password')?.touched || form.get('password')?.dirty)
+      "
+      class="input__password--error"
+    >
+      <mat-error *ngIf="form.get('password')?.errors?.['required']">
+        Password is required.
+      </mat-error>
+      <mat-error *ngIf="form.get('password')?.errors?.['minlength']">
+        Password must be at least 8 characters long.
+      </mat-error>
+      <mat-error *ngIf="form.get('password')?.errors?.['invalidPassword']">
+        Password must contain at least 1 character, 1 uppercase letter, 1
+        lowercase letter, and 1 special character.
+      </mat-error>
+    </div>
+  </div>
+  <div class="create-user--form__btn-box">
+    <button
+      class="create-user--form__btn"
+      mat-raised-button
+      color="primary"
+      mat-dialog-close
+      (click)="onSubmit()"
+      [disabled]="form.invalid && show"
+    >
+      Save
+    </button>
+
+    <button
+      class="create-user--form__btn"
+      mat-raised-button
+      color="warn"
+      (click)="close()"
+    >
+      Close
+    </button>
+  </div>
+</form>

@@ -1,0 +1,16 @@
+.delete {
+  padding: 2rem 2rem 0rem 2rem;
+  &__text {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+  }
+  &__btn-box {
+    margin-top: 1.3rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+  }
+  &__btn {
+    width: 3rem;
+  }
+}

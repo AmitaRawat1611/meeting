@@ -1,0 +1,36 @@
+.roll-in-right {
+  animation: roll-in-right 2s ease;
+}
+@keyframes roll-in-right {
+  0% {
+    opacity: 0;
+    transform: translate(-200%, 50%) rotate(-120deg);
+  }
+
+  70% {
+    opacity: 1;
+    transform: translate(-46%, 50%) rotate(0deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-60%, 50%) rotate(0deg);
+  }
+}
+.roll-in-left {
+  animation: roll-in-left 2s ease;
+}
+@keyframes roll-in-left {
+  0% {
+    opacity: 0;
+    transform: translate(200%, 50%) rotate(-120deg);
+  }
+
+  70% {
+    opacity: 1;
+    transform: translate(-60%, 50%) rotate(0deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-55%, 50%) rotate(0deg);
+  }
+}

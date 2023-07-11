@@ -1,0 +1,115 @@
+@import "../../../styles/abstracts/variables";
+@import "../../../styles/abstracts/mixins";
+
+.side-nav {
+  background-color: $white;
+  width: 20rem;
+  // height: 40.5rem;
+  height: 100vh;
+  background-color: $bg;
+  color: $white;
+  position: relative;
+  z-index: 0;
+
+  @include respond(tab-land) {
+    display: none;
+  }
+
+  &__collapse-btn {
+    position: absolute;
+    left: 19%;
+    border: none;
+    top: 44%;
+    z-index: 2;
+    background-color: #eaeffe;
+
+    &--icon {
+      font-size: 2rem;
+      height: 30px;
+      width: 30px;
+      // align-items: center;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  &__link:active,
+  &__link:link,
+  &__link:visited {
+    cursor: pointer;
+    text-decoration: none;
+    // color: $color-gray-9;
+    color: $white;
+  }
+  // &__link:hover {
+  //   background-color: $primary-main;
+  //   color: $white;
+  //   cursor: pointer;
+  //   border-radius: 20px;
+  // }
+  &__item {
+    font-size: 1.2rem;
+    padding: 1.4rem 1rem;
+    display: block;
+    width: 18rem;
+    font-weight: 500;
+    color: $white;
+    // color: $black;
+
+    // &:hover {
+    //   background-color: $white;
+    //   color: $black;
+    //   cursor: pointer;
+    //   border-radius: 10px;
+    // }
+  }
+  &__icon {
+    font-size: 1.6rem;
+    margin-right: 1rem;
+  }
+  &-logo {
+    font-size: 2rem;
+    height: 35px;
+    width: 35px;
+    align-self: center;
+    color: $white;
+    &--text {
+      font-size: 1.5rem !important;
+      text-transform: uppercase !important;
+      line-height: 1.5 !important;
+      font-weight: 700;
+    }
+  }
+}
+
+.logo-container {
+  display: flex;
+  padding: 2rem 2rem 1rem 2rem;
+  text-align: center;
+  align-items: center;
+  border-bottom: 2px solid #dddbdb;
+}
+
+.example-container {
+  width: 500px;
+  height: 300px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.example-sidenav-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.example-sidenav {
+  padding: 20px;
+}

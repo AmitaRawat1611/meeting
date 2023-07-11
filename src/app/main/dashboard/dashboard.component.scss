@@ -1,0 +1,189 @@
+@import "../../../styles/base/text";
+@import "../../../styles/base/utilities";
+@import "../../../styles/abstracts/variables";
+@import "../../../styles/abstracts/mixins";
+
+.meeting-card {
+  padding: 0rem;
+  max-width: 21rem;
+
+  // border-left: 7px solid $primary-main;
+  &--heading {
+    font-size: 1rem;
+  }
+}
+.main__card {
+  padding: 2rem;
+  margin: 1rem 2rem;
+  border-radius: 33px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  // overflow-y: scroll;
+}
+
+.welcome__card {
+  width: 80%;
+  height: 33%;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 20px;
+  background-color: #eaeffe;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  // position: relative;
+  &--text {
+    padding: 2rem 2rem 1.5rem 2rem;
+    font-size: 3rem;
+    font-weight: 500;
+    color: $bg;
+    letter-spacing: -0.5px;
+
+    &-small {
+      font-size: 1.1rem;
+
+      margin-left: 2rem;
+      line-height: 1.5;
+      letter-spacing: 1.7px;
+    }
+  }
+  &--img {
+    width: 40%;
+    position: absolute;
+    right: -3px;
+    @include respond(tab-land) {
+      display: none;
+    }
+  }
+}
+.demo-inline-calendar-card {
+  width: 300px;
+  margin-left: 0.5rem;
+}
+.meeting-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.calendar {
+  margin-top: 2rem;
+  margin-right: 2rem;
+}
+
+.main__content {
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: space-between;
+
+  @include respond(tab-land) {
+    // display: block;
+    flex-direction: column;
+  }
+}
+.cards {
+  display: flex;
+}
+.info {
+  padding: 1.5rem;
+  &__card {
+    border-radius: 25px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+}
+.card {
+  min-width: 15rem;
+  transition: all 0.2s;
+  display: flex;
+  flex-wrap: wrap;
+  @include respond(tab-port) {
+    min-width: 12rem;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+
+  &__heading {
+    font-size: 1.2rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 500;
+    @include respond(tab-land) {
+      font-size: 1rem;
+    }
+  }
+  &__number {
+    font-size: 1.6rem;
+    text-align: center;
+    font-weight: 700;
+  }
+}
+.links {
+  margin: 1rem;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  @include respond(tab-land) {
+    // display: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    order: 0;
+  }
+
+  &__box {
+    height: 9rem;
+    padding: 1rem;
+    width: 20rem;
+
+    @include respond(tab-land) {
+      width: 15rem;
+    }
+
+    &--1 {
+      background-color: #e1daf8;
+      @include respond(tab-land) {
+        order: 0;
+      }
+      &-img {
+        position: absolute;
+        z-index: 1;
+        right: 11%;
+        bottom: 0;
+        width: 74%;
+      }
+    }
+    &--2 {
+      @include respond(tab-land) {
+        order: 1;
+      }
+      background-color: #eaf6fd;
+    }
+    &--3 {
+      background-color: #f7e1b7;
+      @include respond(tab-land) {
+        order: 3;
+      }
+    }
+  }
+  &__heading {
+    text-transform: uppercase;
+  }
+  &__title {
+    color: $white;
+  }
+  &__summary {
+    color: $white;
+  }
+}
+
+.table {
+  min-width: 51rem;
+  // margin: 1rem;
+}
+.tab2 {
+  // height: 27.2rem;
+  height: 28rem;
+  overflow-y: scroll;
+}
+// #3c3683
+// #12102c

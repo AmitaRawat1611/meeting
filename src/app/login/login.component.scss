@@ -1,0 +1,127 @@
+@import "../../styles/abstracts/variables";
+@import "../../styles/abstracts/mixins";
+.login {
+  &__section {
+    position: relative;
+    background-color: $primary-light;
+    display: flex;
+    height: 100vh;
+    // background-image: url("./../../assets/images/bg-form.png");
+    // background-size: cover;
+    // background-color: antiquewhite;
+  }
+  &__main {
+    &-heading {
+      position: absolute;
+      color: $primary-light;
+      font-size: 2.3rem;
+      padding: 1.4rem;
+      text-transform: uppercase;
+      font-weight: 300;
+      align-items: center;
+    }
+  }
+  &__heading {
+    color: #562ac5;
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+    margin-top: 4rem;
+    text-transform: uppercase;
+
+    &-2 {
+      color: #562ac5;
+      font-weight: 300;
+      font-size: 2rem;
+      text-transform: uppercase;
+    }
+  }
+  &__background {
+    background-size: cover;
+    z-index: 0;
+    top: 0;
+    @include respond(tab-land) {
+      display: none;
+    }
+  }
+  &__img {
+    // width: 150%;
+    width: 90%;
+  }
+
+  &__btn {
+    padding: 1.6rem;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+    font-size: 1rem;
+  }
+  &__icon {
+    font-size: 1.7rem;
+    margin-right: 1.2rem;
+  }
+}
+.form {
+  width: 100%;
+
+  &__card {
+    width: 35%;
+    // width: auto;
+    margin: 0 auto;
+    padding: 4rem;
+    position: absolute;
+    z-index: 1;
+    right: 7%;
+    top: 10%;
+    border-radius: 20px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+    @include respond(tab-land) {
+      width: 48%;
+      right: 0;
+      top: 0;
+      transform: translate(-54%, 41%);
+    }
+    @include respond(tab-port) {
+      width: 60%;
+      transform: translate(-34%, 41%);
+    }
+
+    &::before {
+      content: "Meeting Organiser";
+      position: absolute;
+      top: 6%;
+      left: 0;
+      padding: 1rem 2rem;
+      background-color: $primary-main;
+      border-bottom-right-radius: 30px;
+      border-top-right-radius: 30px;
+      font-size: 1.4rem;
+      font-weight: 500;
+      // text-transform: uppercase;
+      color: $primary-light;
+    }
+  }
+  &__container {
+    display: flex;
+    gap: 5rem;
+  }
+  &__text {
+    color: $primary-main;
+    cursor: pointer;
+    display: flex;
+    text-decoration: none;
+
+    justify-self: flex-end;
+  }
+}
+// .flex {
+//   display: flex;
+// }
+mat-form-field {
+  width: 100%;
+  margin-bottom: 0.6rem;
+}
+.example-full-width {
+  width: 100%;
+}

@@ -1,0 +1,79 @@
+<nav class="header__nav">
+  <button mat-button [matMenuTriggerFor]="navMenu" class="header__nav-menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #navMenu="matMenu">
+    <button mat-menu-item>
+      <a class="header__nav-link" [routerLink]="['/main']"> Dashboard </a>
+    </button>
+
+    <button mat-menu-item>
+      <a class="header__nav-link" [routerLink]="['user-manage']">
+        User Management
+      </a>
+    </button>
+
+    <button mat-menu-item>
+      <a class="header__nav-link" [routerLink]="['meeting']">
+        Schedule Meeting
+      </a>
+    </button>
+  </mat-menu>
+
+  <div class="flex">
+    <mat-icon class="header__nav-calendar">calendar_today</mat-icon>
+    <p class="header__nav-text">{{ date | date : "longDate" }}</p>
+  </div>
+  <div class="flex">
+    <mat-icon
+      *ngIf="notificationCount === 0 || notificationCount === undefined"
+      matBadgeColor="warn"
+      class="header__nav-icon"
+      [matMenuTriggerFor]="notification"
+      >notifications_none</mat-icon
+    >
+    <mat-icon
+      *ngIf="notificationCount > 0"
+      matBadge="{{ notificationCount }}"
+      matBadgeColor="warn"
+      class="header__nav-icon"
+      [matMenuTriggerFor]="notification"
+      >notifications_none</mat-icon
+    >
+    <mat-menu #notification="matMenu" class="notification">
+      <app-notification></app-notification>
+    </mat-menu>
+    <img
+      src="../../../assets/images/profile.webp"
+      alt="profile-picture"
+      class="header__nav-img"
+      [matMenuTriggerFor]="menu"
+    />
+
+    <mat-menu #menu="matMenu" class="menu">
+      <img
+        src="../../../assets/images/profile.webp"
+        alt="profile-picture"
+        class="menu__img"
+      />
+      <div class="menu__info-box">
+        <h1 class="menu__name">{{ name }}</h1>
+        <p class="menu__age">{{ age }}</p>
+        <p class="menu__gender">{{ gender }}</p>
+        <p class="menu__role">{{ role }}</p>
+        <p class="menu__email">{{ email }}</p>
+      </div>
+      <button
+        mat-raised-button
+        color="warn"
+        class="menu__btn"
+        (click)="updateDetails(values)"
+      >
+        Update
+      </button>
+    </mat-menu>
+    <button mat-raised-button color="primary" (click)="logout()" class="">
+      Logout
+    </button>
+  </div>
+</nav>

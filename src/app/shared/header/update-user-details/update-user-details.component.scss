@@ -1,0 +1,50 @@
+@import "../../../../styles/abstracts/variables";
+
+.create-user--form {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  border-left: 10px solid $primary-dark;
+
+  &__btn {
+    padding: 1.6rem;
+    margin-right: 1rem;
+
+    &-box {
+      display: flex;
+      align-self: flex-end;
+    }
+  }
+  &__heading {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    letter-spacing: 1.3px;
+  }
+
+  &__input {
+    width: 100%;
+  }
+}
+input {
+  width: 100%;
+}
+.mat-mdc-dialog-container .mdc-dialog__surface {
+  border-radius: var(
+    --mdc-dialog-container-shape,
+    var(--mdc-shape-medium, 22px)
+  );
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.gender__box {
+  display: flex;
+
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}

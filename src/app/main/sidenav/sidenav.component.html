@@ -1,0 +1,38 @@
+<!-- <mat-drawer #drawer mode="side" autosize class="example-sidenav">
+  <button
+    type="button"
+    mat-button
+    (click)="drawer.toggle()"
+    class="side-nav__collapse-btn"
+  >
+    <mat-icon class="side-nav__collapse-btn--icon">arrow_right_alt</mat-icon>
+  </button> -->
+<nav class="side-nav">
+  <!-- Toggle side nav -->
+
+  <div class="logo-container">
+    <mat-icon class="side-nav-logo">people</mat-icon>
+    <p class="side-nav-logo--text">Meeting Planner</p>
+  </div>
+  <ul class="side-nav__list">
+    <li class="side-nav__item">
+      <a class="side-nav__link" [routerLink]="['/main']">
+        <mat-icon class="side-nav__icon">dashboard</mat-icon>Dashboard
+      </a>
+    </li>
+    <!-- *ngIf="admin" -->
+    <li *ngIf="admin" class="side-nav__item">
+      <a class="side-nav__link" [routerLink]="['user-manage']">
+        <mat-icon class="side-nav__icon">supervisor_account</mat-icon>User
+        Management
+      </a>
+    </li>
+    <li class="side-nav__item">
+      <a class="side-nav__link" [routerLink]="['calendar']">
+        <mat-icon class="side-nav__icon">calendar_today</mat-icon> Schedule
+        Meeting
+      </a>
+    </li>
+  </ul>
+</nav>
+<!-- </mat-drawer> -->

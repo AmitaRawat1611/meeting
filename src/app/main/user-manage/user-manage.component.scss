@@ -1,0 +1,45 @@
+@import "../../../styles/abstracts/variables";
+
+.filter {
+  width: 80%;
+  margin: 2rem;
+}
+table {
+  width: 90%;
+  margin-bottom: 2rem;
+}
+
+.mat-mdc-form-field {
+  font-size: 14px;
+}
+
+td,
+th {
+  width: auto;
+}
+.container {
+  display: flex;
+  align-items: center;
+
+  &__card {
+    padding: 1rem;
+    margin-top: 1rem;
+    // overflow-x: scroll;
+  }
+}
+
+.table {
+  &__btn {
+    border: none;
+    background: none;
+  }
+  &__icon {
+    &--create {
+      color: $primary-main;
+      margin-right: 0.3rem;
+    }
+    &--delete {
+      color: red;
+    }
+  }
+}

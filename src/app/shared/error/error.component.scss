@@ -1,0 +1,52 @@
+@import "../../../styles/abstracts/variables";
+.bg {
+  position: absolute;
+  z-index: -1;
+  height: 100vh;
+  background-image: linear-gradient(to right, #5943be, #205096);
+  width: 100%;
+  top: 0;
+}
+.error {
+  &__section {
+    z-index: 1;
+    width: 50%;
+    margin: 10rem auto;
+    border-radius: 60px;
+    background-color: $white;
+    padding: 4rem;
+    text-align: center;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+  &__status {
+    font-size: 5rem;
+    font-weight: 700;
+    text-align: center;
+    background: -webkit-linear-gradient($primary-main, $secondary-main);
+    padding: 1rem;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  &__text {
+    font-size: 2.4rem;
+    margin-bottom: 2rem;
+  }
+  &__detail {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+  }
+  &__btn {
+    padding: 0.7rem 1rem;
+    border-radius: 13px;
+    border: none;
+    background-color: $primary-main;
+    color: $white;
+    font-size: 1rem;
+    transition: all 0.2s;
+
+    &:active {
+      transform: translateY(2px);
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+  }
+}
